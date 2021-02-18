@@ -107,7 +107,7 @@ function ArrayFieldTemplate(props) {
       <div
         className="array-item-list"
         key={`array-item-list-${props.idSchema.$id}`}>
-        {props.items && props.items.map(p => DefaultArrayItem(p))}
+        {props.items && (props.items|| []).map(p => DefaultArrayItem(p))}
       </div>
 
       {props.canAdd && (

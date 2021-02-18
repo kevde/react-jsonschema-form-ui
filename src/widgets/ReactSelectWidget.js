@@ -43,7 +43,7 @@ class ReactSelectWidget extends Component {
           if(record_keys)
             record_keys.map((key, i) => { remoteData = remoteData[key] }); // This traverses the list of path names from the record array in the paths object.
 
-          const select_options = Array.isArray(remoteData) ? remoteData.map((item, index) => {
+          const select_options = Array.isArray(remoteData) ? (remoteData|| []).map((item, index) => {
             if(remote_options.paths){
               let value = Object.assign({}, item);
               let label = Object.assign({}, item);
@@ -88,7 +88,7 @@ class ReactSelectWidget extends Component {
 
     const value = this._transformArraytoLabelsAndValues();
 
-    return value.map((obj)=> {
+    return (value|| []).map((obj)=> {
       const option = select_options.find(({value}) => value === obj.value)
       return {
         value: obj.value,
@@ -106,7 +106,7 @@ class ReactSelectWidget extends Component {
       const enumValues = this.props.schema.enum || this.props.schema.items.enum;
       const enumNames = this.props.schema.enumNames;
 
-      data = enumValues.map((item, index) => {
+      data = (enumValues || []).map((item, index) => {
         let label = item;
         if (enumNames && enumValues.length === enumNames.length)
           label = enumNames[index];

@@ -41,11 +41,6 @@ function ReactDropZoneWidget(props) {
                 )}
             </div>
           </section>
-          { props.rawErrors && props.rawError.map((error) => {
-            return (
-              <div>{error}</div>
-            )
-          })}
           { areFilesVisible && <FileDisplay files={props.value} onRemove={handleRemove} />}
         </>
       )}

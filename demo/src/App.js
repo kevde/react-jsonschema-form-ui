@@ -53,6 +53,7 @@ const schema = {
   properties: {
     textarea: {
       title: "Textarea auto resize content",
+      minLength: 8,
       type: "string",
     },
     test_react_select_without_enumNames: {
@@ -86,7 +87,7 @@ const schema = {
       type: "array",
       items: {
         type: "string",
-        enum: [],
+        enum: [""],
       },
       uniqueItems: true,
     },
@@ -119,7 +120,7 @@ const schema = {
           },
           select: {
             type: "string",
-            enum: [],
+            enum: [""],
             title: "Remote Select",
           },
         },
@@ -137,6 +138,7 @@ const schema = {
       type: "string",
       title: "Signer",
       format: "data-url",
+      required: true,
     },
     raw_html: {
       type: "string",
@@ -500,6 +502,7 @@ class FormComponent extends Component {
               widgets={widgets}
               fields={fields}
               liveValidate
+              noHtml5Validate
               onChange={log("changed")}
               onSubmit={this.handleSubmit}
               onError={log("errors")}

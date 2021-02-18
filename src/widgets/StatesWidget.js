@@ -13,7 +13,7 @@ const StatesWidget = (props) => {
       readOnly={props.readonly}
       >
         <option value=""> </option>
-      { state_abbreviations.map((state)=>{
+      { (state_abbreviations|| []).map((state)=>{
         return (
           <option key={state} value={state}>{state}</option>
         );
