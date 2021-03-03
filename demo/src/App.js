@@ -18,6 +18,7 @@ import {
   ReactQRReaderField,
   ReactScannerField,
   ReactTreeSelectField,
+  ReactMultiSelectField,
 } from "../../src/index";
 import treeOptions from "./tree-options";
 import "./App.css";
@@ -54,6 +55,7 @@ const fields = {
   ReactTreeSelectField: ReactTreeSelectField,
   ReactInputTableWidget: ReactInputTableWidget,
   ReactFormulaField: ReactFormulaField,
+  ReactMultiSelectField: ReactMultiSelectField,
 };
 
 const CORS_ANYWHERE = "https://cors-anywhere.herokuapp.com";
@@ -352,6 +354,9 @@ const schema = {
         },
       },
     },
+    multi_select: {
+      title: "multi select",
+    },
   },
 };
 
@@ -627,6 +632,9 @@ const uiSchema = {
         [1, 2, 3, 4, 5],
       ],
     },
+  },
+  multi_select: {
+    "ui:field": "ReactMultiSelectField",
   },
 };
 

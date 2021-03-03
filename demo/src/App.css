@@ -61,6 +61,45 @@ textarea {
 .css-g1d714-ValueContainer {
   height: 30px;
 }
+.multi_select_container {
+  border: 1px solid rgb(222, 226, 230);
+  min-height: 200px;
+  width: 300px;
+}
+.multi_select_header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  /* background-color: red; */
+  margin: 0px 10px;
+  border-bottom: 1px solid rgb(222, 226, 230);
+}
+.multi_select_body {
+  height: calc(100% - 40px);
+  /* background-color: green; */
+  overflow-y: scroll;
+  max-height: 200px;
+  min-height: 200px;
+}
+.multi_select_body .multi_select_ul {
+  padding: 0px;
+}
+.multi_select_body .multi_select_list {
+  background-color: #dcf4ff;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0px 10px;
+}
+.multi_select_list span {
+  font-size: 15px;
+  padding-left: 10px;
+}
+.total_items {
+  font-size: 15px;
+  margin-left: 10px;
+}
 
 @media print {
   br,

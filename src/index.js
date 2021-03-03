@@ -12,7 +12,7 @@ export { default as ReactPlaceAutofillField } from "./fields/ReactPlaceAutofillF
 export { default as ReactQRReaderField } from "./fields/ReactQRReaderField/index";
 export { default as ReactScannerField } from "./fields/ReactScannerField/index";
 export { default as ReactTreeSelectField } from "./fields/ReactTreeSelectField/index";
-
+export { default as ReactMultiSelectField } from "./fields/ReactMultiSelectFields/ReactMultiSelectFields";
 // Widgets
 export { default as CurrencyWidget } from "./widgets/CurrencyWidget";
 export { default as PercentWidget } from "./widgets/PercentWidget";
