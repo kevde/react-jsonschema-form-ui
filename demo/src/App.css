@@ -85,12 +85,14 @@ textarea {
   padding: 0px;
 }
 .multi_select_body .multi_select_list {
-  background-color: #dcf4ff;
   list-style: none;
   display: flex;
   align-items: center;
   height: 30px;
   padding: 0px 10px;
+}
+.active {
+  background-color: #dcf4ff;
 }
 .multi_select_list span {
   font-size: 15px;
