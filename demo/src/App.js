@@ -355,7 +355,11 @@ const schema = {
       },
     },
     multi_select: {
-      title: "multi select",
+      title: "Multi Select",
+      type: "array",
+      items: {
+        type: "string",
+      },
     },
   },
 };
@@ -635,6 +639,18 @@ const uiSchema = {
   },
   multi_select: {
     "ui:field": "ReactMultiSelectField",
+    "ui:options": {
+      items: [
+        "content 1",
+        "content 2",
+        "content 3",
+        "content 4",
+        "content 5",
+        "content 6",
+        "content 7",
+        "content 8",
+      ],
+    },
   },
 };
 

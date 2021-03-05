@@ -17,8 +17,11 @@ class ReactMultiSelectField extends Component {
   };
 
   handleCheckAll = (e) => {
+    const { onChange } = this.props;
     var ele = document.getElementsByName("multiple_select_checkbox");
     var li = document.getElementsByClassName("multi_select_list");
+    const active = document.getElementsByClassName("active");
+    const selectedItems = [];
 
     for (var i = 0; i < ele.length; i++) {
       if (ele[i].type == "checkbox") {
@@ -29,13 +32,19 @@ class ReactMultiSelectField extends Component {
       }
     }
 
+    for (var i = 0; i < active.length; i++) {
+      selectedItems.push(active[i].innerText);
+    }
+
+    onChange && onChange(selectedItems);
+
     this.setState({ counter: e.currentTarget.checked ? ele.length : 0 });
   };
 
   render() {
     return (
       <>
-        <div>sample multi select</div>
+        <label>{this.props.schema.title}</label>
         <div className="multi_select_container">
           <div className="multi_select_header">
             <Form.Check type="checkbox" onChange={this.handleCheckAll} />
@@ -43,13 +52,15 @@ class ReactMultiSelectField extends Component {
           </div>
           <div className="multi_select_body">
             <ul id="list" className="multi_select_ul">
-              <CheckBox name="sample1" ctr={this.handlerCounter} checked />
-              <CheckBox name="sample2" ctr={this.handlerCounter} />
-              <CheckBox name="sample3" ctr={this.handlerCounter} />
-              <CheckBox name="sample4" ctr={this.handlerCounter} />
-              <CheckBox name="sample5" ctr={this.handlerCounter} />
-              <CheckBox name="sample6" ctr={this.handlerCounter} />
-              <CheckBox name="sample7" ctr={this.handlerCounter} />
+              {this.props.uiSchema["ui:options"].items.map((item) => {
+                return (
+                  <CheckBox
+                    name={item}
+                    ctr={this.handlerCounter}
+                    onChange={this.props.onChange}
+                  />
+                );
+              })}
             </ul>
           </div>
         </div>
